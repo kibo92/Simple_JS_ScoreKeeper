@@ -53,6 +53,12 @@ function reset() {
 }
 
 numInput.addEventListener("change", function() {
+
+    if(Number(this.value) <= 0) {
+        this.value = "";
+        return alert("Please choose a number higher than zero.");
+    }
+
     winingScoreDisplay.textContent = this.value;
     winningScore = Number(this.value);
     reset();
